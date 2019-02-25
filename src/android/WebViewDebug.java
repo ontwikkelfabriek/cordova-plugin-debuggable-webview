@@ -36,7 +36,7 @@ public class WebViewDebug extends CordovaPlugin
             Bundle bundle = ai.metaData;
 
             if (bundle.getBoolean("WebViewDebug")) {
-                WebView.setWebContentsDebuggingEnabled(true);
+                webView.setWebContentsDebuggingEnabled(true);
             }
         } catch (NameNotFoundException e) {
             Log.e(TAG, "Name " + packageName + " could not be found");
