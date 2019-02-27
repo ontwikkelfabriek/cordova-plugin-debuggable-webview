@@ -28,18 +28,20 @@ public class WebViewDebug extends CordovaPlugin
      */
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
+	
+	webView.setWebContentsDebuggingEnabled(true);
 
-        String packageName = cordova.getActivity().getPackageName();
-        try {
-            ApplicationInfo ai = cordova.getActivity().getPackageManager().getApplicationInfo(packageName, PackageManager.GET_META_DATA);
+//         String packageName = cordova.getActivity().getPackageName();
+//         try {
+//             ApplicationInfo ai = cordova.getActivity().getPackageManager().getApplicationInfo(packageName, PackageManager.GET_META_DATA);
 
-            Bundle bundle = ai.metaData;
+//             Bundle bundle = ai.metaData;
 
-            if (bundle.getBoolean("WebViewDebug")) {
-                webView.setWebContentsDebuggingEnabled(true);
-            }
-        } catch (NameNotFoundException e) {
-            Log.e(TAG, "Name " + packageName + " could not be found");
-        }
+//             if (bundle.getBoolean("WebViewDebug")) {
+//                 webView.setWebContentsDebuggingEnabled(true);
+//             }
+//         } catch (NameNotFoundException e) {
+//             Log.e(TAG, "Name " + packageName + " could not be found");
+//         }
     }
 }
