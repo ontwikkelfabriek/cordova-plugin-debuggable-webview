@@ -29,7 +29,7 @@ public class WebViewDebug extends CordovaPlugin
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
 	
-	webView.setWebContentsDebuggingEnabled(true);
+	WebView.setWebContentsDebuggingEnabled(true);
 
 //         String packageName = cordova.getActivity().getPackageName();
 //         try {
