@@ -30,6 +30,7 @@ public class WebViewDebug extends CordovaPlugin
         super.initialize(cordova, webView);
 	
 	WebView.setWebContentsDebuggingEnabled(true);
+	webView.getSettings().setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
 
 //         String packageName = cordova.getActivity().getPackageName();
 //         try {
