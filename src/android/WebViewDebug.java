@@ -32,7 +32,20 @@ public class WebViewDebug extends CordovaPlugin
 	webView.clearCache(false);
 	WebView.setWebContentsDebuggingEnabled(true);
 	
-	webView.getSettings().setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
+	// webView.getSettings().setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
+	try {
+    		Method m = WebSettings.class.getMethod("setMixedContentMode", int.class);
+    		if ( m == null ) {
+        		Log.e("WebSettings", "Error getting setMixedContentMode method");
+    		}
+    		else {
+        		m.invoke(webView.getSettings(), 0); // 2 = MIXED_CONTENT_COMPATIBILITY_MODE
+        		Log.i("WebSettings", "Successfully set MIXED_CONTENT_COMPATIBILITY_MODE");
+    		}
+	}
+	catch (Exception ex) {
+    		Log.e("WebSettings", "Error calling setMixedContentMode: " + ex.getMessage(), ex);
+	}
 
 //         String packageName = cordova.getActivity().getPackageName();
 //         try {
