@@ -40,7 +40,7 @@ public class WebViewDebug extends CordovaPlugin
         		Log.e("WebSettings", "Error getting setMixedContentMode method");
     		}
     		else {
-        		m.invoke(webView.getSettings(), 0); // 2 = MIXED_CONTENT_COMPATIBILITY_MODE
+        		m.invoke(webView.getSettings(), 0); 
         		Log.i("WebSettings", "Successfully set MIXED_CONTENT_COMPATIBILITY_MODE");
     		}
 	}
