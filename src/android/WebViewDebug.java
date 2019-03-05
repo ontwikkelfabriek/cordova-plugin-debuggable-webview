@@ -11,6 +11,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.webkit.WebView;
 import android.webkit.WebSettings;
+import java.lang.reflect.*;
 
 import android.util.Log;
 
