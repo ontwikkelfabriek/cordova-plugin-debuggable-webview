@@ -10,6 +10,7 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Build;
 import android.os.Bundle;
 import android.webkit.WebView;
+import android.webkit.WebSettings;
 
 import android.util.Log;
 
@@ -28,8 +29,9 @@ public class WebViewDebug extends CordovaPlugin
      */
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
-	
+	webView.clearCache(false);
 	WebView.setWebContentsDebuggingEnabled(true);
+	
 	webView.getSettings().setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
 
 //         String packageName = cordova.getActivity().getPackageName();
